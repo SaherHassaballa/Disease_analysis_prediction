@@ -1,3 +1,17 @@
+# Ensure required libraries are installed
+try:
+    import plotly.express as px
+    import plotly.graph_objects as go
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import pandas as pd
+    import numpy as np
+    import streamlit as st
+    from sklearn.preprocessing import StandardScaler
+except ModuleNotFoundError as e:
+    st.error(f"Required library is missing: {e}. Please install it using pip.")
+    st.stop()
+
 import streamlit as st
 import pickle
 import numpy as np
