@@ -8,21 +8,14 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
-# Set page configuration with dark theme
+# Set page configuration
 st.set_page_config(
     page_title="Diabetes Type Classifier",
     layout="wide",
     initial_sidebar_state="expanded",
-    theme={
-        "primaryColor": "#1f77b4",
-        "backgroundColor": "#0e1117",
-        "textColor": "#ffffff",
-        "font": "sans-serif",
-    },
 )
 
-# Title and description
-st.title("**Diabetes Type Classifier**")
+# Apply dark theme using custom CSS
 st.markdown(
     """
     <style>
@@ -34,10 +27,21 @@ st.markdown(
         background-color: #1f77b4;
         color: #ffffff;
     }
+    .stTextInput>div>div>input {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+    .stNumberInput>div>div>input {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
     </style>
     """,
     unsafe_allow_html=True,
 )
+
+# Title and description
+st.title("**Diabetes Type Classifier**")
 st.markdown(
     """
 Enter values for the features below to predict the type of diabetes.
