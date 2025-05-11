@@ -67,9 +67,8 @@ The model uses a pre-trained Random Forest classifier based on the diabetes data
 # Load dataset to fit scaler
 @st.cache_data
 def load_data():
-    df = pd.read_csv(
-        r"C:\Users\saher\Desktop\workshop\Disease_analysis_prediction\Data\diabetes_dataset00.csv"
-    )
+    file_path = 'Data/diabetes_dataset00.csv'
+    df = pd.read_csv(file_path)
     return df
 
 
