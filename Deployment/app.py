@@ -87,7 +87,7 @@ try:
     # Load the best model from GridSearchCV
     model = pickle.load(
         open(
-            "Deployment/Models/grid_search_model.pkl",
+            "Deployment/Models/random_forest_model.pkl",
             "rb",
         )
     )
