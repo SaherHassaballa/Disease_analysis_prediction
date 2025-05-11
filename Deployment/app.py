@@ -85,9 +85,11 @@ if "Target" in df.columns:
 # Load model
 try:
     # Load the best model from GridSearchCV
+    
+    model_path = "Deployment/Models/random_forest_model.pkl"
     model = pickle.load(
         open(
-            "Deployment/Models/random_forest_model.pkl",
+            model_path,
             "rb",
         )
     )
