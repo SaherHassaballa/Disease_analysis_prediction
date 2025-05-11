@@ -8,11 +8,36 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
-# Set page configuration
-st.set_page_config(page_title="Diabetes Type Classifier", layout="wide")
+# Set page configuration with dark theme
+st.set_page_config(
+    page_title="Diabetes Type Classifier",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    theme={
+        "primaryColor": "#1f77b4",
+        "backgroundColor": "#0e1117",
+        "textColor": "#ffffff",
+        "font": "sans-serif",
+    },
+)
 
 # Title and description
 st.title("**Diabetes Type Classifier**")
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #0e1117;
+        color: #ffffff;
+    }
+    .stButton>button {
+        background-color: #1f77b4;
+        color: #ffffff;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 st.markdown(
     """
 Enter values for the features below to predict the type of diabetes.
@@ -178,6 +203,7 @@ if "Diabetes Type" in df.columns:
         title="Diabetes Type Frequency",
         labels={"Count": "Number of Cases"},
         height=500,
+        template="plotly_dark",
     )
     st.plotly_chart(fig_class_dist, use_container_width=True)
     st.markdown(
@@ -195,6 +221,7 @@ if "Diabetes Type" in df.columns:
         title=f"Distribution of {feature} Across Diabetes Types",
         labels={feature: feature, "Diabetes Type": "Diabetes Type"},
         height=500,
+        template="plotly_dark",
     )
     st.plotly_chart(fig_relationship, use_container_width=True)
     st.markdown(
@@ -224,6 +251,7 @@ if "Diabetes Type" in df.columns:
             color_continuous_scale=px.colors.sequential.Inferno,
             title="Feature Comparison Across Selected Diabetes Types",
             labels={"Diabetes Type Numeric": "Diabetes Type"},
+            template="plotly_dark",
         )
         st.plotly_chart(fig_comparison, use_container_width=True)
         st.markdown(
@@ -245,6 +273,7 @@ if "Diabetes Type" in df.columns:
             title="Feature Importance from Random Forest",
             labels={"Importance": "Importance Score", "Feature": "Feature"},
             height=500,
+            template="plotly_dark",
         )
         st.plotly_chart(fig_importance, use_container_width=True)
         st.markdown(
