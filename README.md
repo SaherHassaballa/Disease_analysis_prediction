@@ -49,6 +49,11 @@ pip install -r requirements.txt
  ```bash
 streamlit run deployment/app.py
 ```
+
+## 🌐 Live Demo
+Try the deployed model here 👉 Live [demo](https://diseaseanalysisprediction-hassaballa.streamlit.app/)
+
+
 Authors
 - Mahmoud Iraqi
 - Saher Hassaballa
